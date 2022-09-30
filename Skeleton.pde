@@ -328,6 +328,34 @@ public class Skeleton{
     this.shoulderTension = PVector.dot(resultantVectorFromSpineShoulderToShoulders, vectorFromSpineShoulderToNeck);
   }
   
+  private PVector getJointRelativePosition(int jointType){ // Relative to the SPINE_MID joint position and orientation.
+    PVector jointPosition = this.joints[jointType].estimatedPosition;
+    PVector spineMidPosition = this.joints[SPINE_MID].estimatedPosition;
+    PVector jointRelativePosition = rotateVector(PVector.sub(jointPosition, spineMidPosition), this.joints[SPINE_MID].estimatedOrientation);
+    return jointRelativePosition;
+  }
+
+  private PVector getJointRelativeVelocity(int jointType){ // Relative to the SPINE_MID joint position and orientation.
+    PVector jointVelocity = this.joints[jointType].estimatedVelocity;
+    PVector spineMidVelocity = this.joints[SPINE_MID].estimatedVelocity;
+    PVector jointRelativeVelocity = rotateVector(PVector.sub(jointVelocity, spineMidVelocity), this.joints[SPINE_MID].estimatedOrientation);
+    return jointRelativeVelocity;
+  }
+
+  private PVector getJointRelativeAcceleration(int jointType){ // Relative to the SPINE_MID joint position and orientation.
+    PVector jointAcceleration = this.joints[jointType].estimatedAcceleration;
+    PVector spineMidAcceleration = this.joints[SPINE_MID].estimatedAcceleration;
+    PVector jointRelativeAcceleration = rotateVector(PVector.sub(jointAcceleration, spineMidAcceleration), this.joints[SPINE_MID].estimatedOrientation);
+    return jointRelativeAcceleration;
+  }
+
+  private PVector getJointRelativeOrientation(int jointType){ // Relative to the SPINE_MID joint orientation.
+    Quaternion jointOrientation = this.joints[jointType].estimatedOrientation;
+    Quaternion spineMidOrientation = this.joints[SPINE_MID].estimatedOrientation;
+    PVector jointRelativeOrientation = calculateRelativeOrientation(jointOrientation, spineMidOrientation);
+    return jointRelativeOrientation;
+  }
+
   private void drawCenterOfMass(float size){
     pushMatrix();
     translate(reScaleX(this.centerOfMass.x, "drawCenterOfMass"), 

@@ -4,10 +4,12 @@ import netP5.*;
 public class Communication{
   private OscP5 oscP5;
   private NetAddress pdAddress;
+  private int communication_rate;
   
-  public Communication(String pdIp, int pdPort, int myPort){
+  public Communication(String pdIp, int pdPort, int myPort, int communication_rate){
     this.oscP5 = new OscP5(this, myPort);
     this.pdAddress = new NetAddress(pdIp, pdPort); //localhost: "127.0.0.1" "192.168.15.16" // "192.168.15.1"
+    this.communication_rate = communication_rate;
   }
   
   public void sendScene(Scene scene){
@@ -98,11 +100,12 @@ public class Communication{
   }*/
   
   private void sendKinectSkeleton(Skeleton skeleton){ 
-    OscMessage messageToPd = new OscMessage("/indexColor:");
+    OscMessage messageToPd = new OscMessage("/startSkeletonStream");
     messageToPd.add(skeleton.indexColor);
+    messageToPd.add(this.communication_rate); // Communications per second
     this.oscP5.send(messageToPd, pdAddress);
     
-    messageToPd = new OscMessage("/global:");
+    messageToPd = new OscMessage("/global");
     messageToPd.add(skeleton.bodySize); // Body Size
     messageToPd.add(skeleton.centerOfMass.x); // Center of Mass 
     messageToPd.add(skeleton.centerOfMass.y); // Center of Mass 
@@ -120,21 +123,44 @@ public class Communication{
     this.oscP5.send(messageToPd, pdAddress);
     
     for (int jointType = 0; jointType<skeleton.joints.length ; jointType++){
-      messageToPd = new OscMessage("/joint" + Integer.toString(jointType) + ":");
-      messageToPd.add(skeleton.joints[jointType].trackingState);
-      messageToPd.add(skeleton.joints[jointType].estimatedPosition.x);
-      messageToPd.add(skeleton.joints[jointType].estimatedPosition.y);
-      messageToPd.add(skeleton.joints[jointType].estimatedPosition.z);
-      messageToPd.add(skeleton.joints[jointType].estimatedOrientation.real);
-      messageToPd.add(skeleton.joints[jointType].estimatedOrientation.vector.x);
-      messageToPd.add(skeleton.joints[jointType].estimatedOrientation.vector.y);
-      messageToPd.add(skeleton.joints[jointType].estimatedOrientation.vector.z);
+      messageToPd = new OscMessage("/joint");
+      messageToPd.add(jointType);
+      messageToPd.add(skeleton.joints[jointType].estimatedPosition.x); // absolute position
+      messageToPd.add(skeleton.joints[jointType].estimatedPosition.y); // absolute position
+      messageToPd.add(skeleton.joints[jointType].estimatedPosition.z); // absolute position
+      messageToPd.add(skeleton.joints[jointType].estimatedVelocity.x); // absolute velocity
+      messageToPd.add(skeleton.joints[jointType].estimatedVelocity.y); // absolute velocity
+      messageToPd.add(skeleton.joints[jointType].estimatedVelocity.z); // absolute velocity
+      messageToPd.add(skeleton.joints[jointType].estimatedAcceleration.x); // absolute acceleration
+      messageToPd.add(skeleton.joints[jointType].estimatedAcceleration.y); // absolute acceleration
+      messageToPd.add(skeleton.joints[jointType].estimatedAcceleration.z); // absolute acceleration
+      messageToPd.add(skeleton.joints[jointType].estimatedOrientation.real); // absolute orientation
+      messageToPd.add(skeleton.joints[jointType].estimatedOrientation.vector.x); // absolute orientation
+      messageToPd.add(skeleton.joints[jointType].estimatedOrientation.vector.y); // absolute orientation
+      messageToPd.add(skeleton.joints[jointType].estimatedOrientation.vector.z); // absolute orientation
+
+      PVector jointRelativePosition = skeleton.getJointRelativePosition(jointType);
+      messageToPd.add(jointRelativePosition.x); // relative position
+      messageToPd.add(jointRelativePosition.y); // relative position
+      messageToPd.add(jointRelativePosition.z); // relative position
+      PVector jointRelativeVelocity = skeleton.getJointRelativeVelocity(jointType);
+      messageToPd.add(jointRelativeVelocity.x); // relative velocity
+      messageToPd.add(jointRelativeVelocity.y); // relative velocity
+      messageToPd.add(jointRelativeVelocity.z); // relative velocity
+      PVector jointRelativeAcceleration = skeleton.getJointRelativeAcceleration(jointType);
+      messageToPd.add(jointRelativeAcceleration.x); // relative acceleration
+      messageToPd.add(jointRelativeAcceleration.y); // relative acceleration
+      messageToPd.add(jointRelativeAcceleration.z); // relative acceleration
+      PVector jointRelativeOrientation = skeleton.getJointRelativeOrientation(jointType);
+      messageToPd.add(jointRelativeOrientation.x); // relative orientation
+      messageToPd.add(jointRelativeOrientation.y); // relative orientation
+      messageToPd.add(jointRelativeOrientation.z); // relative orientation
       this.oscP5.send(messageToPd, pdAddress);
     }
     
     for (int boneType = 0; boneType<skeleton.bones.length ; boneType++){
-      messageToPd = new OscMessage("/bone" + Integer.toString(boneType) + ":");
-      messageToPd.add(skeleton.bones[boneType].trackingState);
+      messageToPd = new OscMessage("/bone");
+      messageToPd.add(boneType);
       messageToPd.add(skeleton.bones[boneType].currentEstimatedDirection.x);
       messageToPd.add(skeleton.bones[boneType].currentEstimatedDirection.y);
       messageToPd.add(skeleton.bones[boneType].currentEstimatedDirection.z);
@@ -144,6 +170,9 @@ public class Communication{
       messageToPd.add(skeleton.bones[boneType].relativeAngle);
       this.oscP5.send(messageToPd, pdAddress);
     }
+    messageToPd = new OscMessage("/endSkeletonStream");
+    messageToPd.add(skeleton.indexColor);
+    this.oscP5.send(messageToPd, pdAddress);
   }
   
   private void sendGrainParameters(Skeleton skeleton){
