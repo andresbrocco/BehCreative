@@ -129,7 +129,7 @@ PVector quaternionToEulerAngles(Quaternion q){
   PVector eulerAngles = new PVector(0,0,0);
   eulerAngles.x = atan2(2*(q.real*q.vector.x + q.vector.y*q.vector.z), 1-2*(q.vector.x*q.vector.x+q.vector.y*q.vector.y));
   eulerAngles.y = asin(2*(q.real*q.vector.y - q.vector.x*q.vector.z));
-  eulerAngles.x = atan2(2*(q.real*q.vector.z + q.vector.x*q.vector.y), 1-2*(q.vector.y*q.vector.y+q.vector.z*q.vector.z));
+  eulerAngles.z = atan2(2*(q.real*q.vector.z + q.vector.x*q.vector.y), 1-2*(q.vector.y*q.vector.y+q.vector.z*q.vector.z));
   return eulerAngles;
 }
 
