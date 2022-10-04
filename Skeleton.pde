@@ -349,11 +349,17 @@ public class Skeleton{
     return jointRelativeAcceleration;
   }
 
-  private PVector getJointRelativeOrientation(int jointType){ // Relative to the SPINE_MID joint orientation.
+  private PVector getJointRelativeOrientationEuler(int jointType){ // Relative to the SPINE_MID joint orientation.
     Quaternion jointOrientation = this.joints[jointType].estimatedOrientation;
     Quaternion spineMidOrientation = this.joints[SPINE_MID].estimatedOrientation;
-    PVector jointRelativeOrientation = calculateRelativeOrientation(jointOrientation, spineMidOrientation);
+    PVector jointRelativeOrientation = calculateRelativeOrientationEuler(jointOrientation, spineMidOrientation);
     return jointRelativeOrientation;
+  }
+
+  private Quaternion getJointRelativeOrientationQuaternion(int jointType){ // Relative to the SPINE_MID joint orientation.
+    Quaternion jointOrientation = this.joints[jointType].estimatedOrientation;
+    Quaternion spineMidOrientation = this.joints[SPINE_MID].estimatedOrientation;
+    return calculateRelativeOrientationQuaternion(jointOrientation, spineMidOrientation);
   }
 
   private void drawCenterOfMass(float size){

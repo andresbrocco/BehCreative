@@ -37,7 +37,7 @@ public class Bone{
     this.previousEstimatedDirection = this.measuredDirection;
     this.averageAngleBetweenMeasuredDirectionAndEstimatedDirection = 1; // "initial guess", in radians.
     this.angleBetweenMeasuredDirectionAndEstimatedDirectionStandardDeviation = 1; // "initial guess", in radians.
-    this.relativeOrientation = calculateRelativeOrientation(this.parentJoint.measuredOrientation, this.childJoint.measuredOrientation);
+    this.relativeOrientation = calculateRelativeOrientationEuler(this.parentJoint.measuredOrientation, this.childJoint.measuredOrientation);
     this.relativeAngle = angleBetweenQuaternions(this.parentJoint.measuredOrientation, this.childJoint.measuredOrientation);
   }
   
@@ -49,7 +49,7 @@ public class Bone{
     this.updateLength(confidenceParameters[0]/10); // the length of the bones should not be too sensitive to new measurements.
     this.estimatedPosition = PVector.lerp(this.parentJoint.estimatedPosition, this.childJoint.estimatedPosition, 0.5);
     this.updateDirection(confidenceParameters[0]);
-    this.relativeOrientation = calculateRelativeOrientation(this.parentJoint.estimatedOrientation, this.childJoint.estimatedOrientation);
+    this.relativeOrientation = calculateRelativeOrientationEuler(this.parentJoint.estimatedOrientation, this.childJoint.estimatedOrientation);
     this.childJoint.update(confidenceParameters); // Continue Chained Update, calling next joint
   }
   

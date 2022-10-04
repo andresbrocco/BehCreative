@@ -56,9 +56,19 @@ float howCloseToTheMean(float x, float mean, float std){
  * @param q2 second orientation quaternion.
  * @return PVector of Euler Angles from q1 to q2.
  */
-PVector calculateRelativeOrientation(Quaternion q1, Quaternion q2){ // relativeOrientation = childOrientation*inverse(parentOrientation). 
+PVector calculateRelativeOrientationEuler(Quaternion q1, Quaternion q2){ // relativeOrientation = childOrientation*inverse(parentOrientation). 
   Quaternion qRelative = qMult(q1, qConjugate(q2)); // From q1 to q2
   return quaternionToEulerAngles(qRelative);
+}
+
+/**
+ * Calculate Quaternion from orientation q1 and orientation q2.
+ * @param q1 first orientation quaternion.
+ * @param q2 second orientation quaternion.
+ * @return Quaternion from q1 to q2.
+ */
+Quaternion calculateRelativeOrientationQuaternion(Quaternion q1, Quaternion q2){ // relativeOrientation = childOrientation*inverse(parentOrientation). 
+  return qMult(q1, qConjugate(q2)); // From q1 to q2
 }
 
 /**

@@ -107,9 +107,6 @@ public class Communication{
     
     messageToPd = new OscMessage("/global");
     messageToPd.add(skeleton.bodySize); // Body Size
-    messageToPd.add(skeleton.centerOfMass.x); // Center of Mass 
-    messageToPd.add(skeleton.centerOfMass.y); // Center of Mass 
-    messageToPd.add(skeleton.centerOfMass.z); // Center of Mass 
     messageToPd.add(skeleton.centerOfMassRelativeToFloor.x); // Center of Mass relative to the floor coordinate system.
     messageToPd.add(skeleton.centerOfMassRelativeToFloor.y); // Center of Mass relative to the floor coordinate system.
     messageToPd.add(skeleton.centerOfMassRelativeToFloor.z); // Center of Mass relative to the floor coordinate system.
@@ -125,48 +122,59 @@ public class Communication{
     for (int jointType = 0; jointType<skeleton.joints.length ; jointType++){
       messageToPd = new OscMessage("/joint");
       messageToPd.add(jointType);
-      messageToPd.add(skeleton.joints[jointType].estimatedPosition.x); // absolute position
-      messageToPd.add(skeleton.joints[jointType].estimatedPosition.y); // absolute position
-      messageToPd.add(skeleton.joints[jointType].estimatedPosition.z); // absolute position
-      messageToPd.add(skeleton.joints[jointType].estimatedVelocity.x); // absolute velocity
-      messageToPd.add(skeleton.joints[jointType].estimatedVelocity.y); // absolute velocity
-      messageToPd.add(skeleton.joints[jointType].estimatedVelocity.z); // absolute velocity
-      messageToPd.add(skeleton.joints[jointType].estimatedAcceleration.x); // absolute acceleration
-      messageToPd.add(skeleton.joints[jointType].estimatedAcceleration.y); // absolute acceleration
-      messageToPd.add(skeleton.joints[jointType].estimatedAcceleration.z); // absolute acceleration
-      messageToPd.add(skeleton.joints[jointType].estimatedOrientation.real); // absolute orientation
-      messageToPd.add(skeleton.joints[jointType].estimatedOrientation.vector.x); // absolute orientation
-      messageToPd.add(skeleton.joints[jointType].estimatedOrientation.vector.y); // absolute orientation
-      messageToPd.add(skeleton.joints[jointType].estimatedOrientation.vector.z); // absolute orientation
+      PVector estimatedPositionRelativeToFloor = skeleton.scene.floor.toFloorCoordinateSystem(skeleton.joints[jointType].estimatedPosition);
+      messageToPd.add(estimatedPositionRelativeToFloor.x); // position relative to floor Coordinate System
+      messageToPd.add(estimatedPositionRelativeToFloor.y); // position relative to floor Coordinate System
+      messageToPd.add(estimatedPositionRelativeToFloor.z); // position relative to floor Coordinate System
+      PVector estimatedVelocityRelativeToFloor = skeleton.scene.floor.toFloorCoordinateSystem(skeleton.joints[jointType].estimatedVelocity);
+      messageToPd.add(estimatedVelocityRelativeToFloor.x); // velocity relative to floor Coordinate System
+      messageToPd.add(estimatedVelocityRelativeToFloor.y); // velocity relative to floor Coordinate System
+      messageToPd.add(estimatedVelocityRelativeToFloor.z); // velocity relative to floor Coordinate System
+      PVector estimatedAccelerationRelativeToFloor = skeleton.scene.floor.toFloorCoordinateSystem(skeleton.joints[jointType].estimatedAcceleration);
+      messageToPd.add(estimatedAccelerationRelativeToFloor.x); // acceleration relative to floor Coordinate System
+      messageToPd.add(estimatedAccelerationRelativeToFloor.y); // acceleration relative to floor Coordinate System
+      messageToPd.add(estimatedAccelerationRelativeToFloor.z); // acceleration relative to floor Coordinate System
+      Quaternion estimatedOrientationRelativeToFloor = skeleton.scene.floor.toFloorCoordinateSystem(skeleton.joints[jointType].estimatedOrientation);
+      messageToPd.add(estimatedOrientationRelativeToFloor.real); // orientation
+      messageToPd.add(estimatedOrientationRelativeToFloor.vector.x); // orientation relative to floor Coordinate System
+      messageToPd.add(estimatedOrientationRelativeToFloor.vector.y); // orientation relative to floor Coordinate System
+      messageToPd.add(estimatedOrientationRelativeToFloor.vector.z); // orientation relative to floor Coordinate System
 
-      PVector jointRelativePosition = skeleton.getJointRelativePosition(jointType);
-      messageToPd.add(jointRelativePosition.x); // relative position
-      messageToPd.add(jointRelativePosition.y); // relative position
-      messageToPd.add(jointRelativePosition.z); // relative position
-      PVector jointRelativeVelocity = skeleton.getJointRelativeVelocity(jointType);
-      messageToPd.add(jointRelativeVelocity.x); // relative velocity
-      messageToPd.add(jointRelativeVelocity.y); // relative velocity
-      messageToPd.add(jointRelativeVelocity.z); // relative velocity
-      PVector jointRelativeAcceleration = skeleton.getJointRelativeAcceleration(jointType);
-      messageToPd.add(jointRelativeAcceleration.x); // relative acceleration
-      messageToPd.add(jointRelativeAcceleration.y); // relative acceleration
-      messageToPd.add(jointRelativeAcceleration.z); // relative acceleration
-      PVector jointRelativeOrientation = skeleton.getJointRelativeOrientation(jointType);
-      messageToPd.add(jointRelativeOrientation.x); // relative orientation
-      messageToPd.add(jointRelativeOrientation.y); // relative orientation
-      messageToPd.add(jointRelativeOrientation.z); // relative orientation
+      PVector jointPositionRelativeToSpineMid = skeleton.getJointRelativePosition(jointType);
+      messageToPd.add(jointPositionRelativeToSpineMid.x); // position relative to the SpineMid joint
+      messageToPd.add(jointPositionRelativeToSpineMid.y); // position relative to the SpineMid joint
+      messageToPd.add(jointPositionRelativeToSpineMid.z); // position relative to the SpineMid joint
+      PVector jointVelocityRelativeToSpineMid = skeleton.getJointRelativeVelocity(jointType);
+      messageToPd.add(jointVelocityRelativeToSpineMid.x); // velocity relative to the SpineMid joint
+      messageToPd.add(jointVelocityRelativeToSpineMid.y); // velocity relative to the SpineMid joint
+      messageToPd.add(jointVelocityRelativeToSpineMid.z); // velocity relative to the SpineMid joint
+      PVector jointAccelerationRelativeToSpineMid = skeleton.getJointRelativeAcceleration(jointType);
+      messageToPd.add(jointAccelerationRelativeToSpineMid.x); // acceleration relative to the SpineMid joint
+      messageToPd.add(jointAccelerationRelativeToSpineMid.y); // acceleration relative to the SpineMid joint
+      messageToPd.add(jointAccelerationRelativeToSpineMid.z); // acceleration relative to the SpineMid joint
+      PVector jointOrientationEulerRelativeToSpineMid = skeleton.getJointRelativeOrientationEuler(jointType);
+      messageToPd.add(jointOrientationEulerRelativeToSpineMid.x); // orientation relative to the SpineMid joint
+      messageToPd.add(jointOrientationEulerRelativeToSpineMid.y); // orientation relative to the SpineMid joint
+      messageToPd.add(jointOrientationEulerRelativeToSpineMid.z); // orientation relative to the SpineMid joint
+      Quaternion jointOrientationQuaternionRelativeToSpineMid = skeleton.getJointRelativeOrientationQuaternion(jointType);
+      messageToPd.add(jointOrientationQuaternionRelativeToSpineMid.real); // orientation relative to the SpineMid joint
+      messageToPd.add(jointOrientationQuaternionRelativeToSpineMid.vector.x); // orientation relative to the SpineMid joint
+      messageToPd.add(jointOrientationQuaternionRelativeToSpineMid.vector.y); // orientation relative to the SpineMid joint
+      messageToPd.add(jointOrientationQuaternionRelativeToSpineMid.vector.z); // orientation relative to the SpineMid joint
       this.oscP5.send(messageToPd, pdAddress);
     }
     
     for (int boneType = 0; boneType<skeleton.bones.length ; boneType++){
       messageToPd = new OscMessage("/bone");
       messageToPd.add(boneType);
-      messageToPd.add(skeleton.bones[boneType].currentEstimatedDirection.x);
-      messageToPd.add(skeleton.bones[boneType].currentEstimatedDirection.y);
-      messageToPd.add(skeleton.bones[boneType].currentEstimatedDirection.z);
-      messageToPd.add(skeleton.bones[boneType].relativeOrientation.x);
-      messageToPd.add(skeleton.bones[boneType].relativeOrientation.y);
-      messageToPd.add(skeleton.bones[boneType].relativeOrientation.z);
+      PVector boneDirectionRelativeToFloor = skeleton.scene.floor.toFloorCoordinateSystem(skeleton.bones[boneType].currentEstimatedDirection);
+      messageToPd.add(boneDirectionRelativeToFloor.x);
+      messageToPd.add(boneDirectionRelativeToFloor.y);
+      messageToPd.add(boneDirectionRelativeToFloor.z);
+      PVector boneOrientationEulerRelativeToFloor = skeleton.scene.floor.toFloorCoordinateSystem(skeleton.bones[boneType].relativeOrientation);
+      messageToPd.add(boneOrientationEulerRelativeToFloor.x);
+      messageToPd.add(boneOrientationEulerRelativeToFloor.y);
+      messageToPd.add(boneOrientationEulerRelativeToFloor.z);
       messageToPd.add(skeleton.bones[boneType].relativeAngle);
       this.oscP5.send(messageToPd, pdAddress);
     }
