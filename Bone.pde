@@ -50,6 +50,7 @@ public class Bone{
     this.estimatedPosition = PVector.lerp(this.parentJoint.estimatedPosition, this.childJoint.estimatedPosition, 0.5);
     this.updateDirection(confidenceParameters[0]);
     this.relativeOrientation = calculateRelativeOrientationEuler(this.parentJoint.estimatedOrientation, this.childJoint.estimatedOrientation);
+    this.relativeAngle = angleBetweenQuaternions(this.parentJoint.estimatedOrientation, this.childJoint.estimatedOrientation);
     this.childJoint.update(confidenceParameters); // Continue Chained Update, calling next joint
   }
   

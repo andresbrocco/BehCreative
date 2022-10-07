@@ -114,7 +114,9 @@ public class Communication{
     messageToPd.add(skeleton.estimatedHandRadius[0]); // Left Hand State
     messageToPd.add(skeleton.estimatedHandRadius[1]); // Right Hand State
     messageToPd.add(skeleton.distanceBetweenHands); // Distance Between Hands
-    messageToPd.add(skeleton.headInclination); // Head Inclination relative to Z axis, in radians
+    messageToPd.add(skeleton.headInclinationRelativeToNeck.x); // Head Inclination relative to Neck coordinate system.
+    messageToPd.add(skeleton.headInclinationRelativeToNeck.y); // Head Inclination relative to Neck coordinate system.
+    messageToPd.add(skeleton.headInclinationRelativeToNeck.z); // Head Inclination relative to Neck coordinate system.
     messageToPd.add(skeleton.shoulderTension); // SHOULDER height relative to SPINESHOULDER
     messageToPd.add(skeleton.momentum.total); // Sum of accelerations of all joints in m/s². Generally, below 10 can be considered no intention of movement, thus resting state.
     this.oscP5.send(messageToPd, pdAddress);

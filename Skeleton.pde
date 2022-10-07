@@ -49,7 +49,7 @@ public class Skeleton{
                                 {23, WRIST_RIGHT, THUMB_RIGHT}};
   // Skeleton Features:
   public float bodySize; // Average length of all bones. Ideally, it should be normalized so that an average person would have bodySize = 1... This normalization have yet to be implemented.
-  public float headInclination = 0; // head inclination relative to Z axis, in radians
+  public PVector headInclinationRelativeToNeck; // Normalized vector
   public float shoulderTension = 0; // SHOULDER height relative to SPINESHOULDER
   //public SteeringWheel steeringWheel = new SteeringWheel(this);
   public float distanceBetweenHands;
@@ -312,12 +312,7 @@ public class Skeleton{
   
   private void updateHeadInclination(){
     PVector vectorFromNeckToHead = PVector.sub(this.joints[HEAD].estimatedPosition, this.joints[NECK].estimatedPosition);
-    if(this.scene.floor.isCalibrated){
-      this.headInclination = asin(PVector.dot(vectorFromNeckToHead, this.scene.floor.basisVectorX)/vectorFromNeckToHead.mag());
-    } else {
-      this.headInclination = asin(vectorFromNeckToHead.x/vectorFromNeckToHead.mag());
-    }
-    //println("headInclination: "+this.headInclination);
+    this.headInclinationRelativeToNeck = rotateVector(vectorFromNeckToHead, this.joints[NECK].estimatedOrientation).normalize();
   }
   
   private void updateShoulderTension(){
