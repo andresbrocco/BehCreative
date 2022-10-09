@@ -17,7 +17,7 @@ public class Communication{
     this.oscMessage = new OscMessage(id);
   }
 
-  private void addMessageValue(int value){
+  private void addMessageValue(float value){
     this.oscMessage.add(value);
   }
   
