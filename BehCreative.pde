@@ -65,14 +65,48 @@ void setup() {
 
 void draw() {
   scene.update();
+
+  if(frameCount % int(scene.frameRate_/communication_rate) == 0){ // communicate via OSC in a limited frequency of 5 messages per second
+    communication.sendScene(scene);
+  }
   
+  if(scene.drawScene){
+    scene.draw(); // measuredSkeletons, jointOrientation, boneRelativeOrientation, handRadius, handStates
+    firstTime = true;
+  } else{
+    animationAlgorithm();
+  }
+}
+
+void animationAlgorithm(){
+  // Your animation algorithm should be placed here
+  updateParticleSystems();
+  beginCamera();
+  camera();
+  translate(0,0,0);
+  rotateX(0);
+  rotateY(0);
+  endCamera();
+  drawBackground();
+  translate(width/2, height/2,0);
+  
+  systemLeft.update();
+  systemRight.update();
+}
+
+void updateParticleSystems(){
   for(Skeleton skeleton:scene.activeSkeletons.values()){
     firstSkeleton = skeleton.indexColor;
     minHeight = (skeleton.bones[14].measuredLength+skeleton.bones[18].measuredLength)/2;
-    maxHeight = ((skeleton.bones[14].measuredLength+skeleton.bones[18].measuredLength)/2)+((skeleton.bones[13].measuredLength+skeleton.bones[17].measuredLength)/2)+skeleton.bones[0].measuredLength+skeleton.bones[1].measuredLength+skeleton.bones[2].measuredLength+skeleton.bones[3].measuredLength+((skeleton.bones[6].measuredLength+skeleton.bones[10].measuredLength)/2);//+((skeleton.bones[7].measuredLength+skeleton.bones[11].measuredLength)/2);
+    maxHeight = ((skeleton.bones[14].measuredLength+skeleton.bones[18].measuredLength)/2)+
+                ((skeleton.bones[13].measuredLength+skeleton.bones[17].measuredLength)/2)+
+                  skeleton.bones[0].measuredLength+
+                  skeleton.bones[1].measuredLength+
+                  skeleton.bones[2].measuredLength+
+                  skeleton.bones[3].measuredLength+
+                ((skeleton.bones[6].measuredLength+skeleton.bones[10].measuredLength)/2);//+((skeleton.bones[7].measuredLength+skeleton.bones[11].measuredLength)/2);
     if(scene.floor.isCalibrated){
         //this.numberOfParticles = int(skeleton.momentum.total/percentOfParticles);
-        
         
         this.normPosRight = skeleton.scene.floor.toFloorCoordinateSystem(skeleton.joints[HAND_RIGHT].estimatedPosition);
         this.normPosRight.x = map(this.normPosRight.x,(-scene.floor.dimensions.x)/2,(scene.floor.dimensions.x)/2,-width/2,width/2);
@@ -94,7 +128,6 @@ void draw() {
         if(skeleton.rightHandRondDuBras.activatedDirectionCode != 0){this.coder = skeleton.rightHandRondDuBras.activatedDirectionCode;}
         systemRight.addParticles(this.normPosRight,coder);
       
-      
         this.normPosLeft = skeleton.scene.floor.toFloorCoordinateSystem(skeleton.joints[HAND_LEFT].estimatedPosition);
         this.normPosLeft.x = map(this.normPosLeft.x,(-scene.floor.dimensions.x)/2,(scene.floor.dimensions.x)/2,-width/2,width/2);
         this.normPosLeft.y = map(this.normPosLeft.y,maxHeight,minHeight,-height/2,height/2);
@@ -113,37 +146,10 @@ void draw() {
         systemLeft.saturation = constrain(systemLeft.saturation,0,100);
         if(skeleton.leftHandRondDuBras.activatedDirectionCode != 0){this.codel = skeleton.leftHandRondDuBras.activatedDirectionCode;}
         systemLeft.addParticles(this.normPosLeft,codel);
-       
-        // communication.sendMessageToElenaProject(skeleton);
-        if(frameCount % int(scene.frameRate_/communication_rate) == 0){ // communicate via OSC in a limited frequency of 5 messages per second
-          communication.sendKinectSkeleton(skeleton);
-        }
-        
     }
   }
-  
-  if(scene.drawScene){
-    scene.draw(); // measuredSkeletons, jointOrientation, boneRelativeOrientation, handRadius, handStates
-    firstTime = true;
-  } else{
-    
-    // Your animation algorithm should be placed here
-    
-    beginCamera();
-    camera();
-    translate(0,0,0);
-    rotateX(0);
-    rotateY(0);
-    endCamera();
-    drawBackground();
-    translate(width/2, height/2,0);
-    
-    systemLeft.update();
-    systemRight.update();
-  }
-  
-  //communication.sendScene(scene);
 }
+
 /*void paint(float x,float y,color cor){
   int NUM = 500;
   float mx = x;
@@ -191,7 +197,6 @@ void draw() {
 }*/
 
 void drawBackground(){
-  
   color back = color(0,0,0);
   if (MOTION_BLUR) {
     // Background with motion blur

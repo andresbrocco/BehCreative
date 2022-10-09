@@ -320,41 +320,41 @@ public class Skeleton{
     PVector vectorFromSpineShoulderToRightShoulder = PVector.sub(this.joints[SHOULDER_RIGHT].estimatedPosition, this.joints[SPINE_SHOULDER].estimatedPosition);
     PVector vectorFromSpineShoulderToNeck = PVector.sub(this.joints[NECK].estimatedPosition, this.joints[SPINE_SHOULDER].estimatedPosition);
     PVector resultantVectorFromSpineShoulderToShoulders = PVector.add(vectorFromSpineShoulderToLeftShoulder, vectorFromSpineShoulderToRightShoulder);
-    this.shoulderTension = PVector.dot(resultantVectorFromSpineShoulderToShoulders, vectorFromSpineShoulderToNeck);
+    this.shoulderTension = 100*PVector.dot(resultantVectorFromSpineShoulderToShoulders, vectorFromSpineShoulderToNeck);
   }
   
-  private PVector getJointRelativePosition(int jointType){ // Relative to the SPINE_MID joint position and orientation.
+  private PVector getJointRelativePosition(int jointType, int referenceJointType){
     PVector jointPosition = this.joints[jointType].estimatedPosition;
-    PVector spineMidPosition = this.joints[SPINE_MID].estimatedPosition;
-    PVector jointRelativePosition = rotateVector(PVector.sub(jointPosition, spineMidPosition), this.joints[SPINE_MID].estimatedOrientation);
+    PVector referenceJointPosition = this.joints[referenceJointType].estimatedPosition;
+    PVector jointRelativePosition = rotateVector(PVector.sub(jointPosition, referenceJointPosition), this.joints[referenceJointType].estimatedOrientation);
     return jointRelativePosition;
   }
 
-  private PVector getJointRelativeVelocity(int jointType){ // Relative to the SPINE_MID joint position and orientation.
+  private PVector getJointRelativeVelocity(int jointType, int referenceJointType){
     PVector jointVelocity = this.joints[jointType].estimatedVelocity;
-    PVector spineMidVelocity = this.joints[SPINE_MID].estimatedVelocity;
-    PVector jointRelativeVelocity = rotateVector(PVector.sub(jointVelocity, spineMidVelocity), this.joints[SPINE_MID].estimatedOrientation);
+    PVector referenceJoinVelocity = this.joints[referenceJointType].estimatedVelocity;
+    PVector jointRelativeVelocity = rotateVector(PVector.sub(jointVelocity, referenceJoinVelocity), this.joints[referenceJointType].estimatedOrientation);
     return jointRelativeVelocity;
   }
 
-  private PVector getJointRelativeAcceleration(int jointType){ // Relative to the SPINE_MID joint position and orientation.
+  private PVector getJointRelativeAcceleration(int jointType, int referenceJointType){
     PVector jointAcceleration = this.joints[jointType].estimatedAcceleration;
-    PVector spineMidAcceleration = this.joints[SPINE_MID].estimatedAcceleration;
-    PVector jointRelativeAcceleration = rotateVector(PVector.sub(jointAcceleration, spineMidAcceleration), this.joints[SPINE_MID].estimatedOrientation);
+    PVector referenceJoinAcceleration = this.joints[referenceJointType].estimatedAcceleration;
+    PVector jointRelativeAcceleration = rotateVector(PVector.sub(jointAcceleration, referenceJoinAcceleration), this.joints[referenceJointType].estimatedOrientation);
     return jointRelativeAcceleration;
   }
 
-  private PVector getJointRelativeOrientationEuler(int jointType){ // Relative to the SPINE_MID joint orientation.
+  private PVector getJointRelativeOrientationEuler(int jointType, int referenceJointType){
     Quaternion jointOrientation = this.joints[jointType].estimatedOrientation;
-    Quaternion spineMidOrientation = this.joints[SPINE_MID].estimatedOrientation;
-    PVector jointRelativeOrientation = calculateRelativeOrientationEuler(jointOrientation, spineMidOrientation);
+    Quaternion referenceJoinOrientation = this.joints[referenceJointType].estimatedOrientation;
+    PVector jointRelativeOrientation = calculateRelativeOrientationEuler(jointOrientation, referenceJoinOrientation);
     return jointRelativeOrientation;
   }
 
-  private Quaternion getJointRelativeOrientationQuaternion(int jointType){ // Relative to the SPINE_MID joint orientation.
+  private Quaternion getJointRelativeOrientationQuaternion(int jointType, int referenceJointType){
     Quaternion jointOrientation = this.joints[jointType].estimatedOrientation;
-    Quaternion spineMidOrientation = this.joints[SPINE_MID].estimatedOrientation;
-    return calculateRelativeOrientationQuaternion(jointOrientation, spineMidOrientation);
+    Quaternion referenceJoinOrientation = this.joints[referenceJointType].estimatedOrientation;
+    return calculateRelativeOrientationQuaternion(jointOrientation, referenceJoinOrientation);
   }
 
   private void drawCenterOfMass(float size){
