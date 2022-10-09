@@ -20,6 +20,18 @@ public class Communication{
   private void addMessageValue(float value){
     this.oscMessage.add(value);
   }
+
+  private void addMessageValue(int value){
+    this.oscMessage.add(value);
+  }
+
+  private void addMessageValue(float value){
+    this.oscMessage.add(value);
+  }
+
+  private void addMessageValue(String value){
+    this.oscMessage.add(value);
+  }
   
   private void dispatch(){
     this.oscP5.send(this.oscMessage, this.pdAddress);
