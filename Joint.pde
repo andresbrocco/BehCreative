@@ -285,6 +285,7 @@ public class Joint{
   public void drawOrientation(boolean drawEstimated, boolean drawMeasured){ // X:Red, Y:Green, Z:Blue
     float size = 15;
     pushMatrix();
+    colorMode(RGB,255,255,255);
     translate(reScaleX(this.estimatedPosition.x, "joint.drawOrientation"), reScaleY(this.estimatedPosition.y, "joint.drawOrientation"), reScaleZ(this.estimatedPosition.z, "joint.drawOrientation"));
     if(drawEstimated){
       strokeWeight(5);
@@ -305,5 +306,6 @@ public class Joint{
       line(0, 0, 0, size*this.measuredDirectionZ.x, size*this.measuredDirectionZ.y, size*this.measuredDirectionZ.z);
     }
     popMatrix();
+    colorMode(HSB,360,100,100);
   }
 }

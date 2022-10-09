@@ -24,7 +24,7 @@ private float maxHeight;
 private int communication_rate = 10; // Communications per second
 int pdPort = 3000;
 int myPort = 3001;
-Communication communication = new Communication("143.106.219.182" , pdPort, myPort, communication_rate);//"127.0.0.1"  "143.106.219.176"
+Communication communication = new Communication("192.168.100.14" , pdPort, myPort, communication_rate);//"127.0.0.1"  "143.106.219.176" "143.106.219.182"
 private color blue1 ;
 private color purple1;
 private color red1;

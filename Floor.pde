@@ -510,6 +510,7 @@ class Floor{
  * It is "unstable", because changes direction randomly each time it is recalculated. Thats why I made the arrangeBasisVectorDirections() method.
  */
   private void drawCoordinateSystem(boolean fromQuaternion, boolean fromSVDBasis){
+    colorMode(RGB,255,255,255);
     if(fromQuaternion){
       PVector coordinateSystemDirectionX = qMult(qMult(this.orientation, new Quaternion(0, 1, 0, 0)), qConjugate(this.orientation)).vector; 
       PVector coordinateSystemDirectionY = qMult(qMult(this.orientation, new Quaternion(0, 0, 1, 0)), qConjugate(this.orientation)).vector; 
@@ -540,6 +541,7 @@ class Floor{
       line(0, 0, 0, reScaleX(size*this.basisVectorZ.x, "floor.drawCoordinateSystem"), reScaleY(size*this.basisVectorZ.y, "floor.drawCoordinateSystem"), reScaleZ(size*this.basisVectorZ.z, "floor.drawCoordinateSystem"));
       popMatrix();
     }
+    colorMode(HSB,360,100,100);
   }
   
 /**

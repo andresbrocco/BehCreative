@@ -160,12 +160,14 @@ public class Scene{
   private void drawKinectCoordinateSystem(){
     float size = 0.5; // meters
     strokeWeight(5);
+    colorMode(RGB,255,255,255);
     stroke(255, 0, 0);
     line(0, 0, 0, reScaleX(size, "scene.drawKinectCoordinateSystem"), 0, 0); // The Processing's coordinate system is inconsistent (X cross Y != Z)
     stroke(0, 255, 0);
     line(0, 0, 0, 0, reScaleY(size, "scene.drawKinectCoordinateSystem"), 0);
     stroke(0, 0, 255);
     line(0, 0, 0, 0, 0, reScaleZ(size, "scene.drawKinectCoordinateSystem"));
+    colorMode(HSB,360,100,100);
   }
   
 /**
