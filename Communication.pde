@@ -222,6 +222,11 @@ public class Communication{
     float averageShoulderToElbowLength = (skeleton.bones[5].estimatedLength + skeleton.bones[9].estimatedLength)/2;
     this.addMessageValue(averageShoulderToElbowLength);
     this.dispatch();
+    
+    this.setMessageId("/shoulderSize");
+    float shoulderSize = skeleton.getJointRelativePosition(SHOULDER_LEFT, SHOULDER_RIGHT).mag();
+    this.addMessageValue(shoulderSize);
+    this.dispatch();
 
     this.setMessageId("/endSkeletonStream");
     this.addMessageValue(skeleton.indexColor);
