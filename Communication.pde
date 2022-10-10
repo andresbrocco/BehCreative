@@ -25,10 +25,6 @@ public class Communication{
     this.oscMessage.add(value);
   }
 
-  private void addMessageValue(float value){
-    this.oscMessage.add(value);
-  }
-
   private void addMessageValue(String value){
     this.oscMessage.add(value);
   }
@@ -233,6 +229,11 @@ public class Communication{
     this.setMessageId("/shoulderToElbowLength");
     float averageShoulderToElbowLength = (skeleton.bones[5].estimatedLength + skeleton.bones[9].estimatedLength)/2;
     this.addMessageValue(averageShoulderToElbowLength);
+    this.dispatch();
+
+    this.setMessageId("/spineMidToNeckLength");
+    float spineMidToNeckLength = PVector.sub(skeleton.joints[NECK].estimatedPosition, skeleton.joints[SPINE_MID].estimatedPosition).mag();
+    this.addMessageValue(spineMidToNeckLength);
     this.dispatch();
     
     this.setMessageId("/shoulderSize");
