@@ -5425,7 +5425,7 @@
 					"tree_openstate_data_0000000000" : [ "[", 1, 0, "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]" ],
 					"tree_openstate_data_count" : [ 1 ],
 					"versionnumber" : 80100,
-					"whole_tree_data_0000000000" : [ "[", "momentum", "[", "total", "_x_x_x_x_bach_float64_x_x_x_x_", 3758096384, 1078550294, "]", "]", "[", "shoulderTension", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 1072801152, "]", "[", "headInclinationRelativeToNeck", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 3221225472, 3219062155, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 1610612736, 1072430871, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 3221225472, 1065614201, "]", "]", "[", "dispersion", "_x_x_x_x_bach_float64_x_x_x_x_", 1610612736, 1073881761, "]", "[", "centerOfMassRelativeToFloor", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 2147483648, 3220705160, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 1073741824, 1072103105, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 536870912, 3219720457, "]", "]", "[", "bodySize", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 1070128573, "]", "[", "rightHandPositionRelativeToNeck", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 1071113003, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 3758096384, 3218486897, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 3758096384, 3217605155, "]", "]", "[", "leftHandPositionRelativeToNeck", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1067507423, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 2147483648, 1069820175, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 1071570450, "]", "]", "[", "distanceBetweenHands", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 1072503240, "]", "[", "estimatedHandRadius", "[", "right", "_x_x_x_x_bach_float64_x_x_x_x_", 3221225472, 1071807890, "]", "[", "left", "_x_x_x_x_bach_float64_x_x_x_x_", 2147483648, 1072381120, "]", "]", "[", "shoulderToElbowLength", "_x_x_x_x_bach_float64_x_x_x_x_", 2147483648, 1070625883, "]", "[", "shoulderSize", "_x_x_x_x_bach_float64_x_x_x_x_", 1610612736, 1070544759, "]" ],
+					"whole_tree_data_0000000000" : [ "[", "momentum", "[", "total", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1075371551, "]", "]", "[", "shoulderTension", "_x_x_x_x_bach_float64_x_x_x_x_", 3758096384, 1072498160, "]", "[", "headInclinationRelativeToNeck", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 3219500827, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 3758096384, 1072075124, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 3221225472, 1070247286, "]", "]", "[", "dispersion", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 1073960389, "]", "[", "centerOfMassRelativeToFloor", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 3221225472, 3220590732, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 2147483648, 1072170068, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 2147483648, 3219913805, "]", "]", "[", "bodySize", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 1070125747, "]", "[", "rightHandPositionRelativeToNeck", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 3221225472, 3215588171, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 536870912, 1069561531, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 3221225472, 3214048754, "]", "]", "[", "leftHandPositionRelativeToNeck", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1068693948, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 3758096384, 3218173448, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 536870912, 1071113989, "]", "]", "[", "distanceBetweenHands", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 1071797346, "]", "[", "estimatedHandRadius", "[", "right", "_x_x_x_x_bach_float64_x_x_x_x_", 536870912, 1071736095, "]", "[", "left", "_x_x_x_x_bach_float64_x_x_x_x_", 1610612736, 1071653832, "]", "]", "[", "shoulderToElbowLength", "_x_x_x_x_bach_float64_x_x_x_x_", 1073741824, 1070658624, "]", "[", "shoulderSize", "_x_x_x_x_bach_float64_x_x_x_x_", 536870912, 1070887748, "]" ],
 					"whole_tree_data_count" : [ 1 ]
 				}
 
@@ -6905,6 +6905,207 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patcher" : 									{
+										"fileversion" : 1,
+										"appversion" : 										{
+											"major" : 8,
+											"minor" : 3,
+											"revision" : 3,
+											"architecture" : "x64",
+											"modernui" : 1
+										}
+,
+										"classnamespace" : "box",
+										"rect" : [ 269.0, 1167.0, 1372.0, 779.0 ],
+										"bglocked" : 0,
+										"openinpresentation" : 0,
+										"default_fontsize" : 12.0,
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"gridonopen" : 1,
+										"gridsize" : [ 15.0, 15.0 ],
+										"gridsnaponopen" : 1,
+										"objectsnaponopen" : 1,
+										"statusbarvisible" : 2,
+										"toolbarvisible" : 1,
+										"lefttoolbarpinned" : 0,
+										"toptoolbarpinned" : 0,
+										"righttoolbarpinned" : 0,
+										"bottomtoolbarpinned" : 0,
+										"toolbars_unpinned_last_save" : 0,
+										"tallnewobj" : 0,
+										"boxanimatetime" : 200,
+										"enablehscroll" : 1,
+										"enablevscroll" : 1,
+										"devicewidth" : 0.0,
+										"description" : "",
+										"digest" : "",
+										"tags" : "",
+										"style" : "",
+										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
+										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-67",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 4,
+													"outlettype" : [ "dictionary", "", "", "" ],
+													"patching_rect" : [ 50.0, 194.0, 101.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"embed" : 0,
+														"parameter_enable" : 0,
+														"parameter_mappable" : 0
+													}
+,
+													"text" : "dict #0_skeletons"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-66",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 165.0, 95.0, 22.0 ],
+													"text" : "prepend replace"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-65",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 80.0, 93.0, 22.0 ],
+													"text" : "r #0_indexColor"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-64",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 137.0, 368.0, 22.0 ],
+													"text" : "join"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-63",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "spineMidToNeckLength", "float" ],
+													"patching_rect" : [ 271.0, 76.0, 147.0, 22.0 ],
+													"text" : "t spineMidToNeckLength f"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-58",
+													"maxclass" : "newobj",
+													"numinlets" : 3,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 50.0, 108.0, 240.0, 22.0 ],
+													"text" : "combine <indexColor> :: <key> @triggers 2"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-82",
+													"index" : 1,
+													"maxclass" : "inlet",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 270.99998933333336, 40.0, 30.0, 30.0 ]
+												}
+
+											}
+ ],
+										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-64", 0 ],
+													"source" : [ "obj-58", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-58", 2 ],
+													"source" : [ "obj-63", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-64", 1 ],
+													"source" : [ "obj-63", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-66", 0 ],
+													"source" : [ "obj-64", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-58", 0 ],
+													"source" : [ "obj-65", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-67", 0 ],
+													"source" : [ "obj-66", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-63", 0 ],
+													"source" : [ "obj-82", 0 ]
+												}
+
+											}
+ ]
+									}
+,
+									"patching_rect" : [ 1252.399999999999864, 312.0, 134.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"description" : "",
+										"digest" : "",
+										"globalpatchername" : "",
+										"tags" : ""
+									}
+,
+									"text" : "p put_in_skeletons_dict"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-19",
 									"maxclass" : "newobj",
@@ -11065,11 +11266,11 @@
 								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "newobj",
-									"numinlets" : 9,
-									"numoutlets" : 9,
-									"outlettype" : [ "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 139.0, 238.0, 1284.599999999999909, 22.0 ],
-									"text" : "route /endSkeletonStream /startSkeletonStream /global /joint /bone /shoulderToElbowLength /detailedHands /shoulderSize"
+									"numinlets" : 10,
+									"numoutlets" : 10,
+									"outlettype" : [ "", "", "", "", "", "", "", "", "", "" ],
+									"patching_rect" : [ 139.0, 238.0, 1318.0, 22.0 ],
+									"text" : "route /endSkeletonStream /startSkeletonStream /global /joint /bone /shoulderToElbowLength /detailedHands /shoulderSize /spineMidToNeckLength"
 								}
 
 							}
@@ -11146,6 +11347,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
 									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-2", 8 ]
 								}
 
 							}
