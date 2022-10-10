@@ -17,11 +17,11 @@ public class Communication{
     this.oscMessage = new OscMessage(id);
   }
 
-  private void addMessageValue(float value){
+  private void addMessageValue(int value){
     this.oscMessage.add(value);
   }
 
-  private void addMessageValue(int value){
+  private void addMessageValue(float value){
     this.oscMessage.add(value);
   }
 
@@ -232,7 +232,7 @@ public class Communication{
     this.dispatch();
 
     this.setMessageId("/spineMidToNeckLength");
-    float spineMidToNeckLength = PVector.sub(skeleton.joints[NECK].estimatedPosition, skeleton.joints[SPINE_MID].estimatedPosition).mag();
+    float spineMidToNeckLength = skeleton.joints[NECK].estimatedPosition.sub(skeleton.joints[SPINE_MID].estimatedPosition).mag();
     this.addMessageValue(spineMidToNeckLength);
     this.dispatch();
     
