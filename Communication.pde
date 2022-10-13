@@ -127,8 +127,8 @@ public class Communication{
     this.addMessageValue(skeleton.estimatedHandRadius[1]); // Right Hand State
     this.addMessageValue(skeleton.distanceBetweenHands); // Distance Between Hands
     
-    this.addMessageValue(skeleton.getJointRelativePosition(HAND_LEFT, SPINE_MID).mag()); // Left Hand Distance to Spine Mid
-    this.addMessageValue(skeleton.getJointRelativePosition(HAND_RIGHT, SPINE_MID).mag()); // Right Hand Distance to Spine Mid
+    this.addMessageValue(skeleton.getJointRelativePosition(HAND_LEFT, SPINE_BASE).mag()); // Left Hand Position relative to Spine Base
+    this.addMessageValue(skeleton.getJointRelativePosition(HAND_RIGHT, SPINE_BASE).mag()); // Right Hand Position relative to Spine Base
     
     PVector leftHandPositionRelativeToNeck = skeleton.getJointRelativePosition(HAND_LEFT, NECK);
     this.addMessageValue(leftHandPositionRelativeToNeck.x); // position relative to the Neck joint

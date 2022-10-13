@@ -2925,8 +2925,66 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-20",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 140.0, 285.599999189376831, 32.0, 22.0 ],
+									"text" : "gate"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 1280.25, 144.599999499320973, 42.0, 22.0 ],
+									"text" : "> 0.35"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-18",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 1104.5, 144.599999499320973, 42.0, 22.0 ],
+									"text" : "> 0.35"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 50.0, 285.599999189376831, 32.0, 22.0 ],
+									"text" : "gate"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 1156.5, 114.0, 95.856348395347595, 20.0 ],
+									"text" : "threshold"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"format" : 6,
 									"id" : "obj-11",
@@ -2935,7 +2993,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 1280.25, 158.0, 50.0, 22.0 ]
+									"patching_rect" : [ 1280.25, 113.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -2948,7 +3006,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 1104.5, 158.0, 50.0, 22.0 ]
+									"patching_rect" : [ 1104.5, 113.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -3428,7 +3486,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 3.999975999999947, 40.0, 30.0, 30.0 ]
 												}
 
@@ -4299,7 +4357,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 3.999975999999947, 40.0, 30.0, 30.0 ]
 												}
 
@@ -4649,7 +4707,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 153.0, 324.0, 74.0, 22.0 ],
+									"patching_rect" : [ 140.0, 324.0, 74.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -4668,7 +4726,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 929.0, 158.0, 29.5, 22.0 ],
+									"patching_rect" : [ 929.0, 113.0, 29.5, 22.0 ],
 									"text" : "/ 2."
 								}
 
@@ -4680,7 +4738,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 753.0, 158.0, 31.0, 22.0 ],
+									"patching_rect" : [ 753.0, 113.0, 31.0, 22.0 ],
 									"text" : "* -2."
 								}
 
@@ -4692,7 +4750,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "int" ],
-									"patching_rect" : [ 153.0, 221.0, 48.0, 22.0 ],
+									"patching_rect" : [ 153.0, 176.0, 48.0, 22.0 ],
 									"text" : "change"
 								}
 
@@ -4704,7 +4762,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 153.0, 252.0, 34.0, 22.0 ],
+									"patching_rect" : [ 153.0, 207.0, 34.0, 22.0 ],
 									"text" : "sel 1"
 								}
 
@@ -4716,7 +4774,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 153.0, 190.0, 36.0, 22.0 ],
+									"patching_rect" : [ 153.0, 145.0, 36.0, 22.0 ],
 									"text" : "< 0.4"
 								}
 
@@ -4728,7 +4786,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "int", "int" ],
-									"patching_rect" : [ 50.0, 221.0, 48.0, 22.0 ],
+									"patching_rect" : [ 50.0, 176.0, 48.0, 22.0 ],
 									"text" : "change"
 								}
 
@@ -4740,7 +4798,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 50.0, 252.0, 34.0, 22.0 ],
+									"patching_rect" : [ 50.0, 207.0, 34.0, 22.0 ],
 									"text" : "sel 1"
 								}
 
@@ -4752,7 +4810,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 50.0, 190.0, 36.0, 22.0 ],
+									"patching_rect" : [ 50.0, 145.0, 36.0, 22.0 ],
 									"text" : "< 0.4"
 								}
 
@@ -4764,7 +4822,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 158.0, 122.0, 22.0 ],
+									"patching_rect" : [ 50.0, 113.0, 122.0, 22.0 ],
 									"text" : "dict.unpack left: right:"
 								}
 
@@ -4779,7 +4837,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 153.0, 495.000001072883606, 30.0, 30.0 ]
+									"patching_rect" : [ 140.0, 495.000001072883606, 30.0, 30.0 ]
 								}
 
 							}
@@ -4790,8 +4848,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 8,
 									"outlettype" : [ "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 50.0, 128.0, 1249.25, 22.0 ],
-									"text" : "dict.unpack estimatedHandRadius: leftHandPositionRelativeToNeck: rightHandPositionRelativeToNeck: shoulderToElbowLength: spineMidToNeckLength: shoulderSize: leftHandDistanceToCG: rightHandDistanceToCG:"
+									"patching_rect" : [ 50.0, 83.0, 1249.25, 22.0 ],
+									"text" : "dict.unpack estimatedHandRadius: leftHandPositionRelativeToNeck: rightHandPositionRelativeToNeck: shoulderToElbowLength: spineMidToNeckLength: shoulderSize: leftHandDistanceToSpineMid: rightHandDistanceToSpineMid:"
 								}
 
 							}
@@ -4802,7 +4860,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 85.0, 133.0, 22.0 ],
+									"patching_rect" : [ 50.0, 40.0, 133.0, 22.0 ],
 									"text" : "r #0_received_skeleton"
 								}
 
@@ -4826,6 +4884,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-11", 0 ]
 								}
 
 							}
@@ -4867,7 +4932,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-76", 2 ],
-									"midpoints" : [ 586.75, 309.0, 190.0, 309.0 ],
+									"midpoints" : [ 586.75, 309.0, 177.0, 309.0 ],
 									"order" : 0,
 									"source" : [ "obj-13", 3 ]
 								}
@@ -4876,7 +4941,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-76", 1 ],
-									"midpoints" : [ 411.0, 309.0, 176.25, 309.0 ],
+									"midpoints" : [ 411.0, 309.0, 163.25, 309.0 ],
 									"source" : [ "obj-13", 2 ]
 								}
 
@@ -4908,7 +4973,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-76", 3 ],
-									"midpoints" : [ 762.5, 309.0, 203.75, 309.0 ],
+									"midpoints" : [ 762.5, 309.0, 190.75, 309.0 ],
 									"order" : 0,
 									"source" : [ "obj-16", 0 ]
 								}
@@ -4920,6 +4985,27 @@
 									"midpoints" : [ 762.5, 309.0, 100.75, 309.0 ],
 									"order" : 1,
 									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-77", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"source" : [ "obj-19", 0 ]
 								}
 
 							}
@@ -4939,8 +5025,15 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-76", 0 ],
+									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-76", 4 ],
-									"midpoints" : [ 938.5, 309.0, 217.5, 309.0 ],
+									"midpoints" : [ 938.5, 309.0, 204.5, 309.0 ],
 									"order" : 0,
 									"source" : [ "obj-35", 0 ]
 								}
@@ -4957,6 +5050,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
 									"source" : [ "obj-5", 0 ]
 								}
@@ -4964,7 +5064,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-77", 0 ],
+									"destination" : [ "obj-17", 1 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -4999,7 +5099,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-76", 0 ],
+									"destination" : [ "obj-20", 1 ],
 									"midpoints" : [ 162.5, 276.0, 162.5, 276.0 ],
 									"source" : [ "obj-9", 0 ]
 								}
@@ -5331,10 +5431,10 @@
 									"out" : "nnnn",
 									"outlettype" : [ "", "", "", "", "bang" ],
 									"patching_rect" : [ 1069.0, 159.615131578947398, 332.333333671092987, 380.500003725290298 ],
-									"tree_openstate_data_0000000000" : [ "[", 1, 0, "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]" ],
+									"tree_openstate_data_0000000000" : [ "[", 1, 0, "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]", "[", 1, 0, 0, "]" ],
 									"tree_openstate_data_count" : [ 1 ],
 									"versionnumber" : 80100,
-									"whole_tree_data_0000000000" : [ "[", "momentum", "[", "total", "_x_x_x_x_bach_float64_x_x_x_x_", 3758096384, 1078056077, "]", "]", "[", "shoulderTension", "_x_x_x_x_bach_float64_x_x_x_x_", 536870912, 1071030077, "]", "[", "headInclinationRelativeToNeck", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 1073741824, 3216285553, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 3221225472, 1072543090, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 3218552636, "]", "]", "[", "dispersion", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 1073880959, "]", "[", "centerOfMassRelativeToFloor", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 536870912, 3220750877, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 536870912, 1072010553, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 536870912, 3219699649, "]", "]", "[", "bodySize", "_x_x_x_x_bach_float64_x_x_x_x_", 1610612736, 1070181286, "]", "[", "rightHandPositionRelativeToNeck", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 1070592568, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 3219304763, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 3218169507, "]", "]", "[", "leftHandPositionRelativeToNeck", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 536870912, 1070499258, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 2147483648, 3216502554, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 536870912, 1071463395, "]", "]", "[", "distanceBetweenHands", "_x_x_x_x_bach_float64_x_x_x_x_", 3221225472, 1072437655, "]", "[", "estimatedHandRadius", "[", "right", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1071831178, "]", "[", "left", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 1071750811, "]", "]", "[", "shoulderToElbowLength", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1070609005, "]", "[", "spineMidToNeckLength", "_x_x_x_x_bach_float64_x_x_x_x_", 2147483648, 1070622913, "]", "[", "shoulderSize", "_x_x_x_x_bach_float64_x_x_x_x_", 2147483648, 1070979511, "]" ],
+									"whole_tree_data_0000000000" : [ "[", "momentum", "[", "total", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1072779322, "]", "]", "[", "shoulderTension", "_x_x_x_x_bach_float64_x_x_x_x_", 2684354560, 1071748498, "]", "[", "headInclinationRelativeToNeck", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 2146959360, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 2146959360, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 2146959360, "]", "]", "[", "dispersion", "_x_x_x_x_bach_float64_x_x_x_x_", 2147483648, 1073181326, "]", "[", "centerOfMassRelativeToFloor", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 1610612736, 3220330251, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 3221225472, 1072019123, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 3219405311, "]", "]", "[", "bodySize", "_x_x_x_x_bach_float64_x_x_x_x_", 2147483648, 1070101910, "]", "[", "rightHandPositionRelativeToNeck", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 2146959360, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 2146959360, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 2146959360, "]", "]", "[", "leftHandPositionRelativeToNeck", "[", "z", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 2146959360, "]", "[", "y", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 2146959360, "]", "[", "x", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 2146959360, "]", "]", "[", "distanceBetweenHands", "_x_x_x_x_bach_float64_x_x_x_x_", 1073741824, 1070996674, "]", "[", "estimatedHandRadius", "[", "right", "_x_x_x_x_bach_float64_x_x_x_x_", 3758096384, 1071671659, "]", "[", "left", "_x_x_x_x_bach_float64_x_x_x_x_", 3221225472, 1071568874, "]", "]", "[", "shoulderToElbowLength", "_x_x_x_x_bach_float64_x_x_x_x_", 3758096384, 1070577176, "]", "[", "spineMidToNeckLength", "_x_x_x_x_bach_float64_x_x_x_x_", 1610612736, 1070591656, "]", "[", "shoulderSize", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1070251785, "]", "[", "rightHandDistanceToSpineMid", "_x_x_x_x_bach_float64_x_x_x_x_", 3221225472, 1070958602, "]", "[", "leftHandDistanceToSpineMid", "_x_x_x_x_bach_float64_x_x_x_x_", 0, 1071824057, "]" ],
 									"whole_tree_data_count" : [ 1 ]
 								}
 
@@ -12877,9 +12977,9 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
-													"outlettype" : [ "rightHandDistanceToCG", "float" ],
-													"patching_rect" : [ 659.5, 327.0, 151.0, 22.0 ],
-													"text" : "t rightHandDistanceToCG f"
+													"outlettype" : [ "rightHandDistanceToSpineMid", "float" ],
+													"patching_rect" : [ 659.5, 327.0, 183.0, 22.0 ],
+													"text" : "t rightHandDistanceToSpineMid f"
 												}
 
 											}
@@ -12889,9 +12989,9 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
-													"outlettype" : [ "leftHandDistanceToCG", "float" ],
-													"patching_rect" : [ 617.0, 287.0, 144.0, 22.0 ],
-													"text" : "t leftHandDistanceToCG f"
+													"outlettype" : [ "leftHandDistanceToSpineMid", "float" ],
+													"patching_rect" : [ 617.0, 287.0, 176.0, 22.0 ],
+													"text" : "t leftHandDistanceToSpineMid f"
 												}
 
 											}
