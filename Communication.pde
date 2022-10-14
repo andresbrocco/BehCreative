@@ -243,6 +243,17 @@ public class Communication{
     float shoulderSize = skeleton.getJointRelativePosition(SHOULDER_LEFT, SHOULDER_RIGHT).mag();
     this.addMessageValue(shoulderSize);
     this.dispatch();
+    
+    this.setMessageId("/saturations");
+    this.addMessageValue(skeleton.joints[HAND_LEFT].saturation);
+    this.addMessageValue(skeleton.joints[HAND_RIGHT].saturation);
+    this.dispatch();
+
+    this.setMessageId("/jerkNorms");
+    this.addMessageValue(skeleton.joints[HAND_LEFT].standartDeviationNorm);
+    this.addMessageValue(skeleton.joints[HAND_RIGHT].standartDeviationNorm);
+    this.dispatch();
+    
 
     this.setMessageId("/endSkeletonStream");
     this.addMessageValue(skeleton.indexColor);
