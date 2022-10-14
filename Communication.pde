@@ -127,8 +127,8 @@ public class Communication{
     this.addMessageValue(skeleton.estimatedHandRadius[1]); // Right Hand State
     this.addMessageValue(skeleton.distanceBetweenHands); // Distance Between Hands
     
-    this.addMessageValue(skeleton.getJointRelativePosition(HAND_LEFT, SPINE_BASE).mag()); // Left Hand Position relative to Spine Base
-    this.addMessageValue(skeleton.getJointRelativePosition(HAND_RIGHT, SPINE_BASE).mag()); // Right Hand Position relative to Spine Base
+    this.addMessageValue(skeleton.getJointRelativePosition(HAND_LEFT, SPINE_BASE).mag()); // Left Hand Distance to Spine Base
+    this.addMessageValue(skeleton.getJointRelativePosition(HAND_RIGHT, SPINE_BASE).mag()); // Right Hand Distance to Spine Base
     
     PVector leftHandPositionRelativeToNeck = skeleton.getJointRelativePosition(HAND_LEFT, NECK);
     this.addMessageValue(leftHandPositionRelativeToNeck.x); // position relative to the Neck joint
@@ -138,6 +138,15 @@ public class Communication{
     this.addMessageValue(rightHandPositionRelativeToNeck.x); // position relative to the Neck joint
     this.addMessageValue(rightHandPositionRelativeToNeck.y); // position relative to the Neck joint
     this.addMessageValue(rightHandPositionRelativeToNeck.z); // position relative to the Neck joint
+    
+    PVector leftHandVelocityRelativeToSpineMid = skeleton.getJointRelativeVelocity(HAND_LEFT, SPINE_MID);
+    this.addMessageValue(leftHandVelocityRelativeToSpineMid.x); // velocity relative to the Spine Mid joint
+    this.addMessageValue(leftHandVelocityRelativeToSpineMid.y); // velocity relative to the Spine Mid joint
+    this.addMessageValue(leftHandVelocityRelativeToSpineMid.z); // velocity relative to the Spine Mid joint
+    PVector rightHandVelocityRelativeToSpineMid = skeleton.getJointRelativeVelocity(HAND_RIGHT, SPINE_MID);
+    this.addMessageValue(rightHandVelocityRelativeToSpineMid.x); // velocity relative to the Spine Mid joint
+    this.addMessageValue(rightHandVelocityRelativeToSpineMid.y); // velocity relative to the Spine Mid joint
+    this.addMessageValue(rightHandVelocityRelativeToSpineMid.z); // velocity relative to the Spine Mid joint
     this.dispatch();
   }
 
