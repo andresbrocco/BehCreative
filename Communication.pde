@@ -148,6 +148,11 @@ public class Communication{
     this.addMessageValue(rightHandVelocityRelativeToSpineMid.y); // velocity relative to the Spine Mid joint
     this.addMessageValue(rightHandVelocityRelativeToSpineMid.z); // velocity relative to the Spine Mid joint
     this.dispatch();
+
+    this.setMessageId("/estimatedJerk"); // left and right hand estimated jerks
+    this.addMessageValue(skeleton.joint[HAND_LEFT].estimatedJerk.mag()); // left hand estimated jerk
+    this.addMessageValue(skeleton.joint[HAND_RIGHT].estimatedJerk.mag()); // right hand estimated jerk
+    this.dispatch();
   }
 
   private void sendAllJoints(Skeleton skeleton){
