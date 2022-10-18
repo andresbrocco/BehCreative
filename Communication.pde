@@ -243,21 +243,25 @@ public class Communication{
     this.sendGlobal(skeleton);
     this.sendDetailedHands(skeleton);
 
-    this.setMessageId("/shoulderToElbowLength");
-    float averageShoulderToElbowLength = (skeleton.bones[5].estimatedLength + skeleton.bones[9].estimatedLength)/2;
-    this.addMessageValue(averageShoulderToElbowLength);
-    this.dispatch();
+    // this.setMessageId("/shoulderToElbowLength");
+    // float averageShoulderToElbowLength = (skeleton.bones[5].estimatedLength + skeleton.bones[9].estimatedLength)/2;
+    // this.addMessageValue(averageShoulderToElbowLength);
+    // this.dispatch();
 
-    this.setMessageId("/spineMidToNeckLength");
-    float spineMidToNeckLength = PVector.sub(skeleton.joints[NECK].estimatedPosition, skeleton.joints[SPINE_MID].estimatedPosition).mag();
-    this.addMessageValue(spineMidToNeckLength);
-    this.dispatch();
+    // this.setMessageId("/spineMidToNeckLength");
+    // float spineMidToNeckLength = PVector.sub(skeleton.joints[NECK].estimatedPosition, skeleton.joints[SPINE_MID].estimatedPosition).mag();
+    // this.addMessageValue(spineMidToNeckLength);
+    // this.dispatch();
     
-    this.setMessageId("/shoulderSize");
-    float shoulderSize = skeleton.getJointRelativePosition(SHOULDER_LEFT, SHOULDER_RIGHT).mag();
-    this.addMessageValue(shoulderSize);
-    this.dispatch();
+    // this.setMessageId("/shoulderSize");
+    // float shoulderSize = skeleton.getJointRelativePosition(SHOULDER_LEFT, SHOULDER_RIGHT).mag();
+    // this.addMessageValue(shoulderSize);
+    // this.dispatch();
     
+    this.setMessageId("/elbowToWristAngles");
+    this.addMessageValue(skeleton.bones[6].relativeAngle);
+    this.addMessageValue(skeleton.bones[10].relativeAngle);
+
     this.setMessageId("/saturations");
     this.addMessageValue(skeleton.joints[HAND_LEFT].saturation);
     this.addMessageValue(skeleton.joints[HAND_RIGHT].saturation);
