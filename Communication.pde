@@ -150,8 +150,8 @@ public class Communication{
     this.dispatch();
 
     this.setMessageId("/estimatedJerk"); // left and right hand estimated jerks
-    this.addMessageValue(skeleton.joint[HAND_LEFT].estimatedJerk.mag()); // left hand estimated jerk
-    this.addMessageValue(skeleton.joint[HAND_RIGHT].estimatedJerk.mag()); // right hand estimated jerk
+    this.addMessageValue(skeleton.joints[HAND_LEFT].estimatedJerk.mag()); // left hand estimated jerk
+    this.addMessageValue(skeleton.joints[HAND_RIGHT].estimatedJerk.mag()); // right hand estimated jerk
     this.dispatch();
   }
 
