@@ -238,6 +238,7 @@ public class Communication{
     this.setMessageId("/startSkeletonStream");
     this.addMessageValue(skeleton.indexColor);
     this.addMessageValue(this.communication_rate); // Communications per second
+    this.addMessageValue(skeleton.scene.sessionName); // Session name, usually the volunteer name
     this.dispatch();
 
     this.sendGlobal(skeleton);
@@ -259,8 +260,9 @@ public class Communication{
     // this.dispatch();
     
     this.setMessageId("/elbowToWristAngles");
-    this.addMessageValue(skeleton.bones[6].relativeAngle);
-    this.addMessageValue(skeleton.bones[10].relativeAngle);
+    this.addMessageValue(PVector.angleBetween(skeleton.bones[5].currentEstimatedDirection, skeleton.bones[6].currentEstimatedDirection));
+    this.addMessageValue(PVector.angleBetween(skeleton.bones[9].currentEstimatedDirection, skeleton.bones[10].currentEstimatedDirection));
+    this.dispatch();
 
     this.setMessageId("/saturations");
     this.addMessageValue(skeleton.joints[HAND_LEFT].saturation);
