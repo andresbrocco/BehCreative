@@ -622,6 +622,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 427.0, 270.0, 70.0, 22.0 ],
+									"text" : "loadmess 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-5",
 									"maxclass" : "comment",
@@ -944,6 +956,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-51", 0 ],
 									"source" : [ "obj-55", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-21", 0 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -4262,11 +4281,13 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-3",
+									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 68.5, 170.0, 286.0, 22.0 ]
+									"patching_rect" : [ 68.5, 170.0, 286.0, 22.0 ],
+									"text" : "\"Macintosh HD:/Users/asbrocco/Documents/REPOS/BehCreative/Max/audio_files/volumes.json\""
 								}
 
 							}
@@ -19544,7 +19565,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-25", 0 ],
-									"source" : [ "obj-2", 14 ]
+									"source" : [ "obj-2", 13 ]
 								}
 
 							}
