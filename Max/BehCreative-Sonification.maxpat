@@ -7032,6 +7032,7 @@
 			}
 , 			{
 				"box" : 				{
+					"display_range" : [ -70.0, 20.0 ],
 					"fontsize" : 12.0,
 					"id" : "obj-71",
 					"lastchannelcount" : 0,
@@ -7048,7 +7049,7 @@
 						"valueof" : 						{
 							"parameter_initial" : [ 0 ],
 							"parameter_longname" : "live.gain~[5]",
-							"parameter_mmax" : 6.0,
+							"parameter_mmax" : 20.0,
 							"parameter_mmin" : -70.0,
 							"parameter_shortname" : "live.gain~",
 							"parameter_type" : 0,
