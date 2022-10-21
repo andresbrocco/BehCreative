@@ -12,7 +12,7 @@
 		"classnamespace" : "box",
 		"rect" : [ 34.0, 87.0, 1372.0, 779.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -138,7 +138,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 765.0, 768.0, 129.0, 39.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 765.0, 771.0, 129.0, 39.0 ],
+					"presentation_rect" : [ 747.0, 151.0, 129.0, 39.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_initial" : [ 0 ],
@@ -554,7 +554,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 926.0, 551.0, 82.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 926.0, 550.0, 82.0, 20.0 ],
+					"presentation_rect" : [ 747.0, 82.0, 82.0, 20.0 ],
 					"text" : "Affordance 5"
 				}
 
@@ -570,7 +570,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 913.0, 573.0, 24.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 913.0, 572.0, 24.0, 24.0 ]
+					"presentation_rect" : [ 747.0, 104.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -758,7 +758,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1046.5, 895.0, 150.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 386.0, 20.0, 348.0, 20.0 ],
+					"presentation_rect" : [ 386.0, 20.0, 486.0, 20.0 ],
 					"text" : "Files saved at:",
 					"textjustification" : 2
 				}
@@ -19025,7 +19025,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 739.0, 177.0, 378.0, 83.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.5, 2.0, 753.0, 299.0 ],
+					"presentation_rect" : [ 1.5, 2.0, 892.5, 299.0 ],
 					"proportion" : 0.5
 				}
 
