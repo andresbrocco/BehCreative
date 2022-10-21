@@ -273,7 +273,10 @@ public class Communication{
     this.addMessageValue(skeleton.joints[HAND_LEFT].standartDeviationNorm);
     this.addMessageValue(skeleton.joints[HAND_RIGHT].standartDeviationNorm);
     this.dispatch();
-    
+
+    this.setMessageId("/bodyInclination"); // Angle between the bone from the spine to the head and the floor
+    this.addMessageValue(PVector.angleBetween(skeleton.bones[0].currentEstimatedDirection, skeleton.scene.floor.basisVectorY));
+    this.dispatch();
 
     this.setMessageId("/endSkeletonStream");
     this.addMessageValue(skeleton.indexColor);
