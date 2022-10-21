@@ -558,7 +558,6 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_initial" : [ 0 ],
-							"parameter_initial_enable" : 1,
 							"parameter_longname" : "live.gain~[7]",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
@@ -6960,7 +6959,6 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_initial" : [ 0 ],
-							"parameter_initial_enable" : 1,
 							"parameter_longname" : "live.gain~[5]",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
@@ -7038,7 +7036,6 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_initial" : [ 0 ],
-							"parameter_initial_enable" : 1,
 							"parameter_longname" : "live.gain~[4]",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
@@ -7459,7 +7456,6 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_initial" : [ 0 ],
-							"parameter_initial_enable" : 1,
 							"parameter_longname" : "live.gain~[3]",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
@@ -7492,7 +7488,6 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_initial" : [ 0 ],
-							"parameter_initial_enable" : 1,
 							"parameter_longname" : "live.gain~[2]",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
@@ -19882,7 +19877,6 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_initial" : [ 0 ],
-							"parameter_initial_enable" : 1,
 							"parameter_longname" : "live.gain~[1]",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
