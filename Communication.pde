@@ -278,6 +278,11 @@ public class Communication{
     this.addMessageValue(PVector.angleBetween(skeleton.bones[0].currentEstimatedDirection, skeleton.scene.floor.basisVectorY));
     this.dispatch();
 
+    this.setMessageId("/kneeAngle"); // Angle between the bone from the Hip to the Knee and the bone from the Knee to the Ankle
+    this.addMessageValue(PVector.angleBetween(skeleton.bones[13].currentEstimatedDirection, skeleton.bones[14].currentEstimatedDirection)); // left
+    this.addMessageValue(PVector.angleBetween(skeleton.bones[17].currentEstimatedDirection, skeleton.bones[18].currentEstimatedDirection)); // right
+    this.dispatch();
+
     this.setMessageId("/endSkeletonStream");
     this.addMessageValue(skeleton.indexColor);
     this.dispatch();
