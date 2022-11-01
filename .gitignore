@@ -10,3 +10,4 @@ application.macosx
 out
 savedSessions/
 *.wmv
+**/experiment_files/
