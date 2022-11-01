@@ -275,7 +275,7 @@ public class Communication{
     this.dispatch();
 
     this.setMessageId("/bodyInclination"); // Angle between the bone from the spine to the head and the floor
-    this.addMessageValue(PVector.angleBetween(skeleton.bones[0].currentEstimatedDirection, skeleton.scene.floor.basisVectorY));
+    this.addMessageValue(PVector.angleBetween(skeleton.bones[1].currentEstimatedDirection, skeleton.scene.floor.basisVectorY));
     this.dispatch();
 
     this.setMessageId("/kneeAngle"); // Angle between the bone from the Hip to the Knee and the bone from the Knee to the Ankle
