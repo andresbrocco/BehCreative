@@ -76,7 +76,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 896.0, 81.0, 82.0, 20.0 ],
+					"patching_rect" : [ 1243.0, 456.0, 82.0, 20.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 896.0, 82.0, 82.0, 20.0 ],
 					"text" : "Knee Control"
@@ -144,9 +144,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
-					"outlettype" : [ "int", "int" ],
+					"outlettype" : [ "float", "int" ],
 					"patching_rect" : [ 1226.0, 548.0, 156.0, 22.0 ],
-					"text" : "maximum"
+					"text" : "maximum 0."
 				}
 
 			}
@@ -6960,7 +6960,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 994.0, 87.0, 892.0, 959.0 ],
+										"rect" : [ 514.0, 87.0, 892.0, 959.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
